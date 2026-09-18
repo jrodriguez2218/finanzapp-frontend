@@ -1,13 +1,17 @@
-Evidencia: GA7-220501096-AA4-EV03
-Proyecto: FinanzApp - Módulo de Autenticación y Gestión de Usuarios
+Evidencia: Componente front-end del proyecto formativo y proyectos de clase. GA7-220501096-AA4-EV03.
 
-Enlace del repositorio (GitHub/GitLab):
->> PENDIENTE: pega aquí la URL después de hacer "git push" a tu repositorio remoto <<
+Proyecto: FinanzApp - Módulo Front-End (React)
 
-Pasos sugeridos:
-1. Crea un repositorio vacío en GitHub llamado, por ejemplo, "finanzapp-aa4-ev03".
-2. En la carpeta del proyecto ejecuta:
-   git remote add origin https://github.com/TU_USUARIO/finanzapp-aa4-ev03.git
-   git branch -M main
-   git push -u origin main
-3. Copia la URL del repositorio y reemplaza la línea "PENDIENTE" de este archivo.
+Aprendices:
+
+- Johan Camilo Rodríguez Bautista
+- Juan David Salamanca Cristancho
+- Santiago Cepeda Fonseca
+
+Programa: Tecnólogo en Análisis y Desarrollo de Software (ADSO)
+
+Ficha: 3186635
+
+ENLACE DEL REPOSITORIO:
+
+https://github.com/jrodriguez2218/finanzapp-frontend
