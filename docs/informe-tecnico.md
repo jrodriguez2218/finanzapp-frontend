@@ -1,59 +1,91 @@
-# Informe técnico — Construcción del módulo de Autenticación y Usuarios
+# Informe técnico — Componente Front-End de FinanzApp
 
-**Evidencia:** GA7-220501096-AA4-EV03
-**Proyecto:** FinanzApp
+**Evidencia:** GA7-220501096-AA4-EV03 — Componente front-end del proyecto formativo y proyectos de clase.
 
-## Objetivo del módulo
+**Proyecto:** FinanzApp — Aplicación web para gestión financiera personal.
 
-Codificar la funcionalidad de acceso a la plataforma (registro e inicio de
-sesión) y la administración de las cuentas de usuario, siguiendo el diseño
-y el modelo de datos ya definidos en las etapas previas del ciclo de vida
-del software del proyecto formativo.
+**Aprendices:**
 
-## Tecnologías seleccionadas
+- Johan Camilo Rodríguez Bautista
+- Juan David Salamanca Cristancho
+- Santiago Cepeda Fonseca
 
-| Capa            | Tecnología                          | Justificación |
-|-----------------|--------------------------------------|----------------|
-| Estructura      | HTML5 semántico                      | Estándar, accesible, sin dependencias |
-| Presentación    | CSS3 (variables custom)              | Reutiliza la paleta del prototipo, sin frameworks pesados |
-| Comportamiento  | JavaScript (ES6+), sin frameworks    | Alcance del módulo no requiere un framework SPA |
-| Persistencia    | `localStorage` / `sessionStorage`    | Permite evaluar el front-end de forma autónoma; estructura de datos idéntica a la tabla `usuarios` de MySQL para facilitar una futura integración con backend |
+**Programa:** Tecnólogo en Análisis y Desarrollo de Software (ADSO)
 
-## Plan de trabajo seguido
+**Ficha:** 3186635
 
-1. Modelado de la entidad `Usuario` en `storage.js`, replicando las
-   columnas definidas en el diagrama de clases / script SQL del proyecto.
-2. Definición de las reglas de validación (`validaciones.js`): campos
-   obligatorios, formato de cédula y correo, mayoría de edad, unicidad de
-   cédula y correo.
-3. Construcción de la vista de Registro y su lógica de envío, incluyendo
-   el manejo de errores por campo y la alerta general de error.
-4. Construcción de la vista de Login, con redirección según el rol del
-   usuario autenticado (ADMIN → panel administrativo, USER → bienvenida).
-5. Construcción del panel administrativo con listado, edición y
-   eliminación de usuarios (CRUD), protegido por verificación de sesión
-   y rol en el cliente.
-6. Documentación del proyecto y versionamiento con Git.
+---
 
-## Pruebas funcionales realizadas
+## 1. Objetivo
 
-- Registro con campos vacíos → se marcan los campos en rojo y aparece la
-  alerta general de error.
-- Registro con una cédula ya existente → mensaje "CEDULA YA REGISTRADA".
-- Registro exitoso → redirección al login con mensaje de confirmación y
-  correo precargado.
-- Login con credenciales inválidas → mensaje de error genérico (no se
-  revela si el correo existe, por buena práctica de seguridad).
-- Login con el usuario administrador → acceso al panel de gestión de
-  usuarios.
-- Edición de un usuario existente → los cambios se reflejan de inmediato
-  en la tabla.
-- Eliminación de un usuario → se solicita confirmación antes de eliminar.
+Desarrollar y codificar el componente Front-End de FinanzApp aplicando los conocimientos relacionados con React, JSX, componentes funcionales, Hooks, eventos, validaciones y organización modular del código.
 
-## Recomendaciones para una siguiente iteración
+El desarrollo busca proporcionar una interfaz web funcional que permita al usuario interactuar con las diferentes funcionalidades de gestión financiera personal.
 
-- Sustituir `localStorage` por llamadas HTTP a una API real conectada a
-  `finanzapp_db` (MySQL), conservando el mismo contrato de datos.
-- Aplicar cifrado (hash) de contraseñas antes de persistirlas.
-- Agregar paginación a la tabla de usuarios cuando el volumen de datos
-  crezca.
+---
+
+## 2. Trazabilidad con las evidencias anteriores
+
+El desarrollo de esta evidencia toma como referencia los conocimientos y definiciones establecidos previamente en el proceso de formación.
+
+### EV01 — Taller sobre componentes front-end
+
+En esta evidencia se estudiaron los conceptos fundamentales de React y JSX, incluyendo:
+
+- Componentes.
+- JSX.
+- Props.
+- State.
+- Hooks.
+- Eventos.
+- Reutilización de componentes.
+
+A partir de estos conceptos se implementaron componentes funcionales de React para el desarrollo de FinanzApp.
+
+Entre los eventos utilizados se encuentran:
+
+- `onClick`
+- `onChange`
+- `onSubmit`
+- `onMouseEnter`
+- `onMouseLeave`
+
+### EV02 — Verificación de componentes front-end
+
+La arquitectura definida previamente contempla los siguientes componentes:
+
+| Componente | Archivo |
+|---|---|
+| App | `js/App.jsx` |
+| Login | `js/componentes/Login.jsx` |
+| Navbar | `js/componentes/Navbar.jsx` |
+| Dashboard | `js/componentes/Dashboard.jsx` |
+| CuentaCard | `js/componentes/CuentaCard.jsx` |
+| FormularioTransacciones | `js/componentes/FormularioTransacciones.jsx` |
+| ListaTransacciones | `js/componentes/ListaTransacciones.jsx` |
+| PresupuestoCard | `js/componentes/PresupuestoCard.jsx` |
+| MetaAhorroCard | `js/componentes/MetaAhorroCard.jsx` |
+| ReporteView | `js/componentes/ReporteView.jsx` |
+| PerfilUsuario | `js/componentes/PerfilUsuario.jsx` |
+| Footer | `js/componentes/Footer.jsx` |
+
+También se implementaron componentes complementarios:
+
+- `Registro.jsx`
+- `Recuperar.jsx`
+- `AdminUsuarios.jsx`
+
+Estos componentes permiten ampliar las funcionalidades de acceso y administración del sistema.
+
+---
+
+## 3. Arquitectura del Front-End
+
+El proyecto se organiza en componentes React y módulos JavaScript separados según su responsabilidad.
+
+### Componentes
+
+Los componentes de interfaz se encuentran en:
+
+```text
+react-app/js/componentes/
