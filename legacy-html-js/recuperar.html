@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanzApp | Recuperar contrasena</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Tarjeta del flujo de recuperacion de contrasena -->
+  <main class="tarjeta-auth">
+    <div class="tarjeta-auth__marca">FinanzApp</div>
+    <h1>Recuperar contrasena</h1>
+    <p class="tarjeta-auth__subtitulo" id="textoAyuda">
+      Ingresa el correo con el que te registraste. Si existe una cuenta,
+      podras definir una nueva contrasena.
+    </p>
+
+    <!-- Alertas de error y de exito, ocultas por defecto -->
+    <div id="alertaError" class="alerta alerta--error oculto" role="alert"></div>
+    <div id="alertaExito" class="alerta alerta--exito oculto" role="status"></div>
+
+    <!-- Paso 1: el usuario indica su correo -->
+    <form id="formBuscarCuenta" novalidate>
+      <div class="campo" id="campoEmailBusqueda">
+        <label for="emailBusqueda">Correo electronico</label>
+        <input type="email" id="emailBusqueda" name="emailBusqueda" autocomplete="email" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+      <button type="submit" class="boton">Buscar mi cuenta</button>
+    </form>
+
+    <!-- Paso 2: definir la nueva contrasena (oculto hasta validar el correo) -->
+    <form id="formNuevaPassword" class="oculto" novalidate>
+      <div class="campo" id="campoPasswordNueva">
+        <label for="passwordNueva">Nueva contrasena</label>
+        <input type="password" id="passwordNueva" name="passwordNueva" autocomplete="new-password" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+      <div class="campo" id="campoPasswordConfirmar">
+        <label for="passwordConfirmar">Confirmar contrasena</label>
+        <input type="password" id="passwordConfirmar" name="passwordConfirmar" autocomplete="new-password" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+      <button type="submit" class="boton">Guardar nueva contrasena</button>
+    </form>
+
+    <p class="enlace-auxiliar">
+      <a href="index.html">Volver a iniciar sesion</a>
+    </p>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/recuperar.js"></script>
+</body>
+</html>

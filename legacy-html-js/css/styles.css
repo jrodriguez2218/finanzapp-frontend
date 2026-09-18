@@ -1,0 +1,340 @@
+/* ============================================================
+   FinanzApp - Hoja de estilos (styles.css)
+   Evidencia GA7-220501096-AA4-EV03
+   ------------------------------------------------------------
+   Paleta y componentes visuales tomados del prototipo funcional
+   del proyecto formativo (fondo oscuro, acentos morado/azul).
+   ============================================================ */
+
+:root {
+  --color-fondo: #0b0a17;
+  --color-panel: #12101f;
+  --color-borde: #423a75;
+  --color-borde-foco: #6f5bd0;
+  --color-texto: #f4f2ff;
+  --color-texto-tenue: #a29fc4;
+  --color-primario-inicio: #4f7cf6;
+  --color-primario-fin: #8b5cf6;
+  --color-error: #ff4d6d;
+  --color-exito: #35d99a;
+  --radio-borde: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1c1836 0%, var(--color-fondo) 60%);
+  color: var(--color-texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ---------- Tarjeta de autenticacion (login / registro) ---------- */
+
+.tarjeta-auth {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 0 40px rgba(111, 91, 208, 0.25);
+}
+
+.tarjeta-auth__marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #8ea2ff;
+}
+
+.tarjeta-auth h1 {
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+}
+
+.tarjeta-auth__subtitulo {
+  color: var(--color-texto-tenue);
+  margin: 0 0 20px;
+  font-size: 0.92rem;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-texto-tenue);
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 12px 14px;
+  background: #191730;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  color: var(--color-texto);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--color-borde-foco);
+}
+
+.campo.campo--error input,
+.campo.campo--error select {
+  border-color: var(--color-error);
+}
+
+.campo__mensaje-error {
+  color: var(--color-error);
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.alerta {
+  border-radius: var(--radio-borde);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+}
+
+.alerta--error {
+  background: rgba(255, 77, 109, 0.12);
+  border-color: rgba(255, 77, 109, 0.4);
+  color: #ffb4c2;
+}
+
+.alerta--exito {
+  background: rgba(53, 217, 154, 0.12);
+  border-color: rgba(53, 217, 154, 0.4);
+  color: #9df3d1;
+}
+
+.boton {
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  border-radius: var(--radio-borde);
+  background: linear-gradient(90deg, var(--color-primario-inicio), var(--color-primario-fin));
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.boton:hover {
+  opacity: 0.92;
+}
+
+.boton:active {
+  transform: scale(0.99);
+}
+
+.boton--secundario {
+  background: transparent;
+  border: 1px solid var(--color-borde);
+}
+
+.enlace-auxiliar {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-texto-tenue);
+  margin-top: 14px;
+}
+
+.enlace-auxiliar a {
+  color: #8ea2ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.enlace-auxiliar a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Panel administrativo (gestion de usuarios) ---------- */
+
+body.admin-body {
+  display: block;
+  padding: 0;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--color-borde);
+  background: var(--color-panel);
+}
+
+.admin-header__marca {
+  font-weight: 700;
+  color: #8ea2ff;
+}
+
+.admin-header__marca span {
+  color: var(--color-texto-tenue);
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-left: 6px;
+}
+
+.admin-header__sesion {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--color-texto-tenue);
+}
+
+.admin-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.admin-main h1 {
+  margin-bottom: 4px;
+}
+
+.admin-main__subtitulo {
+  color: var(--color-texto-tenue);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 0.88rem;
+}
+
+.tabla-usuarios th {
+  color: var(--color-texto-tenue);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tabla-usuarios tr:last-child td {
+  border-bottom: none;
+}
+
+.insignia-rol {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.insignia-rol--ADMIN {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+
+.insignia-rol--USER {
+  background: rgba(79, 124, 246, 0.2);
+  color: #a5c0ff;
+}
+
+.acciones-fila {
+  display: flex;
+  gap: 8px;
+}
+
+.boton-chico {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.boton-chico--editar {
+  color: #8ea2ff;
+  border-color: rgba(142, 162, 255, 0.4);
+}
+
+.boton-chico--eliminar {
+  color: #ff8fa3;
+  border-color: rgba(255, 143, 163, 0.4);
+}
+
+.panel-edicion {
+  margin-top: 24px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde-foco);
+  border-radius: var(--radio-borde);
+  padding: 24px;
+}
+
+.panel-edicion h2 {
+  margin-top: 0;
+}
+
+.panel-edicion__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.panel-edicion__acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.panel-edicion__acciones .boton {
+  width: auto;
+  padding: 10px 20px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .panel-edicion__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-main {
+    padding: 20px;
+  }
+}

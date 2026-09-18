@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanzApp | Registro</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Tarjeta del formulario de registro de usuarios -->
+  <main class="tarjeta-auth">
+    <h1>Registro</h1>
+    <p class="tarjeta-auth__subtitulo">
+      Crea tu cuenta para empezar a gestionar tus finanzas.
+    </p>
+
+    <!-- Alerta general de error, oculta por defecto -->
+    <div id="alertaError" class="alerta alerta--error oculto" role="alert">
+      <strong>Error:</strong> Revisa los datos marcados.
+      <div>Corrige los campos en rojo e intentalo de nuevo.</div>
+    </div>
+
+    <form id="formRegistro" novalidate>
+      <div class="campo" id="campoNombres">
+        <label for="nombres">Nombres</label>
+        <input type="text" id="nombres" name="nombres" autocomplete="given-name" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <div class="campo" id="campoApellidos">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" autocomplete="family-name" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <div class="campo" id="campoCedula">
+        <label for="cedula">Cedula</label>
+        <input type="text" id="cedula" name="cedula" inputmode="numeric" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <div class="campo" id="campoFechaNacimiento">
+        <label for="fechaNacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <div class="campo" id="campoEmail">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <div class="campo" id="campoPassword">
+        <label for="password">Contrasena</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" />
+        <div class="campo__mensaje-error"></div>
+      </div>
+
+      <button type="submit" class="boton">Crear cuenta</button>
+    </form>
+
+    <p class="enlace-auxiliar">
+      ¿Ya tienes cuenta? <a href="index.html">Inicia sesion aqui</a>
+    </p>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

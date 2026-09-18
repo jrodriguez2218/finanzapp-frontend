@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanzApp</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Aqui React monta el componente App -->
+  <div id="root"></div>
+
+  <!-- React y Babel via CDN: sin herramientas de build (npm/webpack),
+       para que el proyecto pueda abrirse solo con Live Server. -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Capa de datos (JS plano, sin JSX) -->
+  <script src="js/datos/storage.js"></script>
+  <script src="js/datos/validaciones.js"></script>
+  <script src="js/datos/transacciones.js"></script>
+  <script src="js/datos/presupuestos.js"></script>
+  <script src="js/datos/metas.js"></script>
+
+  <!-- Componentes de React (JSX, transformados en el navegador por Babel) -->
+  <script type="text/babel" src="js/componentes/Login.jsx"></script>
+  <script type="text/babel" src="js/componentes/Registro.jsx"></script>
+  <script type="text/babel" src="js/componentes/Recuperar.jsx"></script>
+  <script type="text/babel" src="js/componentes/Navbar.jsx"></script>
+  <script type="text/babel" src="js/componentes/CuentaCard.jsx"></script>
+  <script type="text/babel" src="js/componentes/FormularioTransacciones.jsx"></script>
+  <script type="text/babel" src="js/componentes/ListaTransacciones.jsx"></script>
+  <script type="text/babel" src="js/componentes/Dashboard.jsx"></script>
+  <script type="text/babel" src="js/componentes/PresupuestoCard.jsx"></script>
+  <script type="text/babel" src="js/componentes/MetaAhorroCard.jsx"></script>
+  <script type="text/babel" src="js/componentes/ReporteView.jsx"></script>
+  <script type="text/babel" src="js/componentes/PerfilUsuario.jsx"></script>
+  <script type="text/babel" src="js/componentes/AdminUsuarios.jsx"></script>
+  <script type="text/babel" src="js/componentes/Footer.jsx"></script>
+  <script type="text/babel" src="js/App.jsx"></script>
+</body>
+</html>

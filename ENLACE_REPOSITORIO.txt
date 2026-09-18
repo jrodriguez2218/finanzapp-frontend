@@ -1,0 +1,13 @@
+Evidencia: GA7-220501096-AA4-EV03
+Proyecto: FinanzApp - Módulo de Autenticación y Gestión de Usuarios
+
+Enlace del repositorio (GitHub/GitLab):
+>> PENDIENTE: pega aquí la URL después de hacer "git push" a tu repositorio remoto <<
+
+Pasos sugeridos:
+1. Crea un repositorio vacío en GitHub llamado, por ejemplo, "finanzapp-aa4-ev03".
+2. En la carpeta del proyecto ejecuta:
+   git remote add origin https://github.com/TU_USUARIO/finanzapp-aa4-ev03.git
+   git branch -M main
+   git push -u origin main
+3. Copia la URL del repositorio y reemplaza la línea "PENDIENTE" de este archivo.

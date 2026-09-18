@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanzApp | Mi cuenta</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Pantalla de bienvenida para usuarios con rol USER -->
+  <main class="tarjeta-auth">
+    <div class="tarjeta-auth__marca">FinanzApp</div>
+    <h1 id="tituloBienvenida">Hola</h1>
+    <p class="tarjeta-auth__subtitulo" id="resumenSaldo"></p>
+
+    <a href="perfil.html" class="boton" style="display:block; text-align:center; text-decoration:none; margin-bottom: 10px;">
+      Editar mi perfil
+    </a>
+    <button type="button" class="boton boton--secundario" id="botonCerrarSesion">
+      Cerrar sesion
+    </button>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script>
+    'use strict';
+
+    // Proteccion de ruta: solo usuarios con sesion activa entran aqui.
+    const usuarioActivo = Sesion.obtener();
+    if (!usuarioActivo) {
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('tituloBienvenida').textContent =
+        `Hola, ${usuarioActivo.nombres}`;
+      document.getElementById('resumenSaldo').textContent =
+        `Tu saldo actual es $${Number(usuarioActivo.saldo).toFixed(2)}.`;
+    }
+
+    document.getElementById('botonCerrarSesion').addEventListener('click', () => {
+      Sesion.cerrar();
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

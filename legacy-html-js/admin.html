@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanzApp | Gestion de usuarios</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="admin-body">
+
+  <!-- Encabezado del panel administrativo -->
+  <header class="admin-header">
+    <div class="admin-header__marca">
+      FinanzApp <span>/ ADMIN</span>
+    </div>
+    <div class="admin-header__sesion">
+      <span>Sesion: <strong id="nombreSesion">Administrador</strong></span>
+      <a href="perfil.html" class="boton-chico" style="text-decoration:none;">Mi perfil</a>
+      <button type="button" class="boton-chico" id="botonCerrarSesion">Cerrar sesion</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <h1>Gestion de usuarios</h1>
+    <p class="admin-main__subtitulo">
+      Consulta, edita o elimina las cuentas registradas en FinanzApp.
+    </p>
+
+    <!-- Tabla con los usuarios almacenados (equivalente a SELECT * FROM usuarios) -->
+    <table class="tabla-usuarios">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cedula</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Saldo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoTablaUsuarios">
+        <!-- Filas generadas dinamicamente por admin.js -->
+      </tbody>
+    </table>
+
+    <!-- Panel de edicion, oculto hasta que se presiona "Editar" -->
+    <section class="panel-edicion oculto" id="panelEdicion">
+      <h2 id="tituloEdicion">Editando usuario</h2>
+      <form id="formEdicion">
+        <input type="hidden" id="editId" />
+        <div class="panel-edicion__grid">
+          <div class="campo" id="campoEditNombres">
+            <label for="editNombres">Nombres</label>
+            <input type="text" id="editNombres" />
+          </div>
+          <div class="campo" id="campoEditApellidos">
+            <label for="editApellidos">Apellidos</label>
+            <input type="text" id="editApellidos" />
+          </div>
+          <div class="campo" id="campoEditCedula">
+            <label for="editCedula">Cedula</label>
+            <input type="text" id="editCedula" inputmode="numeric" />
+          </div>
+          <div class="campo" id="campoEditFechaNacimiento">
+            <label for="editFechaNacimiento">Fecha de nacimiento</label>
+            <input type="date" id="editFechaNacimiento" />
+          </div>
+          <div class="campo" id="campoEditEmail">
+            <label for="editEmail">Email</label>
+            <input type="email" id="editEmail" />
+          </div>
+          <div class="campo">
+            <label for="editRol">Rol</label>
+            <select id="editRol">
+              <option value="USER">USER</option>
+              <option value="ADMIN">ADMIN</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-edicion__acciones">
+          <button type="submit" class="boton">Guardar cambios</button>
+          <button type="button" class="boton boton--secundario" id="botonCancelarEdicion">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
